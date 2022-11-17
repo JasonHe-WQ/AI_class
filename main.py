@@ -1,3 +1,4 @@
+import numpy
 import csv_reader
 import linear_process
 
@@ -31,11 +32,16 @@ class read_csv():
 
 
 class process_data():
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, data_x, data_y):
+        self.data_x = data_x
+        self.data_y = data_y
+
+    @staticmethod
+    def describe():
+        print('这个类负责处理数据')
 
     def process(self):
-        processed_data = linear_process.process(self.data)
+        processed_data = linear_process.process(self.data_x, self.data_y)
 
 
 class display_data():
