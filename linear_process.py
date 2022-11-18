@@ -43,12 +43,5 @@ def process(x, y):
     lasso_score = r2_score(y_test, lasso_y_pre)
     print('套索回归-决定系数为：\n', lasso_score)
 
-    plt.figure(figsize=(10, 5))  # 画布大小
-    plt.plot(y_test, label='True')
-    plt.plot(y_predict, label='Line')
-    plt.plot(ridge_y_pre, label='Ridge')
-    plt.plot(lasso_y_pre, label='Lasso')
-    plt.legend()
-    plt.show()
 
-    return estimator.coef_, estimator.intercept_, y_predict, mse
+    return y_test, y_predict, ridge_y_pre, lasso_y_pre
