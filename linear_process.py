@@ -1,6 +1,5 @@
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-import numpy
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 
@@ -21,4 +20,3 @@ def process(x, y):
     print('正规方程-均方误差为：\n', mse)
     return estimator.coef_, estimator.intercept_, y_predict, mse
 
-# process(numpy.array([[3,3,3,3,3,3,3],[3,3,3,3,3,3,3]]),numpy.array([3,3,3,3,3,3,3]))
