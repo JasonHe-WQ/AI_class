@@ -59,10 +59,10 @@ class display_data():
 
 
 a = read_csv()
-print(a.load_filename)
+# print(a.load_filename)
 a.read()
-a.describe()
+# a.describe()
 b = process_data(a.data_x,a.data_y)
-b.describe()
+# b.describe()
 c = display_data(b.transfer_data())
 c.display()
