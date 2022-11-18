@@ -1,7 +1,7 @@
-import numpy
 import csv_reader
 import linear_process
 import display_result
+
 
 class read_csv():
 
@@ -58,11 +58,15 @@ class display_data():
         display_result.paint(self.data)
 
 
-a = read_csv()
-print(a.load_filename)
-a.read()
-# a.describe()
-b = process_data(a.data_x,a.data_y)
-# b.describe()
-c = display_data(b.transfer_data())
-c.display()
+def main():
+    read = read_csv()
+    print(read.load_filename)
+    read.read()
+    # a.describe()
+    process = process_data(read.data_x, read.data_y)
+    # b.describe()
+    display = display_data(process.transfer_data())
+    display.display()
+
+
+main()
