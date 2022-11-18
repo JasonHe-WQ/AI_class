@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 
 def process(x, y):
-    if x.shape[0] !=y.shape[0]:
+    if x.shape[0] != y.shape[0]:
         x = x.transpose()
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=420)
     transfer = StandardScaler()
@@ -19,5 +19,6 @@ def process(x, y):
     print('预测房价：\n', y_predict)
     mse = mean_squared_error(y_test, y_predict)
     print('正规方程-均方误差为：\n', mse)
+    return estimator.coef_, estimator.intercept_, y_predict, mse
 
-process(numpy.array([[3,3,3,3,3,3,3],[3,3,3,3,3,3,3]]),numpy.array([3,3,3,3,3,3,3]))
+# process(numpy.array([[3,3,3,3,3,3,3],[3,3,3,3,3,3,3]]),numpy.array([3,3,3,3,3,3,3]))

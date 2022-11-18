@@ -35,13 +35,18 @@ class process_data():
     def __init__(self, data_x, data_y):
         self.data_x = data_x
         self.data_y = data_y
+        self.processed_data = None
 
     @staticmethod
     def describe():
         print('这个类负责处理数据')
 
-    def process(self):
-        processed_data = linear_process.process(self.data_x, self.data_y)
+    def _process(self):
+        self.processed_data = linear_process.process(self.data_x, self.data_y)
+
+    def transfer_data(self):
+        self._process()
+        return self.processed_data
 
 
 class display_data():
@@ -57,4 +62,6 @@ a = read_csv()
 print(a.load_filename)
 a.read()
 a.describe()
-print(a.data_x)
+b = process_data(a.data_x,a.data_y)
+b.describe()
+print(b.transfer_data())
