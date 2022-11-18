@@ -27,8 +27,8 @@ class read_csv():
         if not (self.data_x or self.data_y):
             self._read_csv()
 
-    def _read_csv(self, name='kc_house_data.csv'):
-        self.data_x, self.data_y = csv_reader.read_csv(name)
+    def _read_csv(self):
+        self.data_x, self.data_y = csv_reader.read_csv(self.filename)
 
 
 class process_data():
@@ -59,7 +59,7 @@ class display_data():
 
 
 a = read_csv()
-# print(a.load_filename)
+print(a.load_filename)
 a.read()
 # a.describe()
 b = process_data(a.data_x,a.data_y)
