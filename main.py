@@ -62,9 +62,9 @@ def main():
     read = read_csv()
     print(read.load_filename)
     read.read()
-    # a.describe()
+    # read.describe()
     process = process_data(read.data_x, read.data_y)
-    # b.describe()
+    # display.describe()
     display = display_data(process.transfer_data())
     display.display()
 
